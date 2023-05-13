@@ -1,5 +1,5 @@
 catboost==1.1.1
-joblib==1.1.0
+joblib==1.1.1
 lightgbm==3.3.5
 matplotlib==3.5.2
 numpy==1.21.5
