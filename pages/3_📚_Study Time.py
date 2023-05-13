@@ -19,6 +19,11 @@ def congratulation(key):
                 st.balloons()
                 st.markdown(":green[🥳 You Have Successfully Finished This Phase.]")
 
+
+# Config
+st.set_page_config(layout="centered", page_title="Click ML", page_icon="👆")
+
+
 # Title Page
 st.markdown("<h1 style='text-align: center; '>📚 Study Time</h1>", unsafe_allow_html=True)
 new_line()
@@ -1903,7 +1908,6 @@ with tabs[7]:
         new_line()
 
         
-
 
 
 
