@@ -10,4 +10,4 @@ seaborn==0.11.2
 streamlit==1.22.0
 streamlit_option_menu==0.3.2
 xgboost==1.7.4
-~treamlit==1.11.0
+streamlit==1.11.0
