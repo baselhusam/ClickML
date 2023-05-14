@@ -882,13 +882,13 @@ if uploaded_file:
                     st.write(metrics_df)
 
                     # Plot confusion matrix as plot with plot_confusion_matrix
-                    from sklearn.metrics import plot_confusion_matrix
-                    import matplotlib.pyplot as plt
+#                     from sklearn.metrics import plot_confusion_matrix
+#                     import matplotlib.pyplot as plt
                     
-                    st.markdown("#### Confusion Matrix")
-                    fig, ax = plt.subplots(figsize=(6,6))
-                    plot_confusion_matrix(model, st.session_state.X_test, st.session_state.y_test, ax=ax)
-                    st.pyplot(fig)
+#                     st.markdown("#### Confusion Matrix")
+#                     fig, ax = plt.subplots(figsize=(6,6))
+#                     plot_confusion_matrix(model, st.session_state.X_test, st.session_state.y_test, ax=ax)
+#                     st.pyplot(fig)
 
 
                 elif problem_type == "Regression":
