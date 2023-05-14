@@ -2368,24 +2368,24 @@ if uploaded_file is not None or selected != "Select":
                         col2.pyplot(fig)
                         
                 # Show Confusion Matrix as plot
-                if st.session_state['problem_type'] == "Classification":
-                    from sklearn.metrics import plot_confusion_matrix
-                    st.markdown("### Confusion Matrix")
-                    new_line()
+#                 if st.session_state['problem_type'] == "Classification":
+#                     from sklearn.metrics import plot_confusion_matrix
+#                     st.markdown("### Confusion Matrix")
+#                     new_line()
                     
-                    if is_test:
-                        # Show the confusion matrix plot without any columns
-                        col1, col2, col3 = st.columns([0.2, 1, 0.2])
-                        fig, ax = plt.subplots()
-                        plot_confusion_matrix(model, X_test, y_test, ax=ax)
-                        col2.pyplot(fig)
+#                     if is_test:
+#                         # Show the confusion matrix plot without any columns
+#                         col1, col2, col3 = st.columns([0.2, 1, 0.2])
+#                         fig, ax = plt.subplots()
+#                         plot_confusion_matrix(model, X_test, y_test, ax=ax)
+#                         col2.pyplot(fig)
 
-                    elif is_val:
-                        # Show the confusion matrix plot without any columns
-                        col1, col2, col3 = st.columns([0.2, 1, 0.2])
-                        fig, ax = plt.subplots()
-                        plot_confusion_matrix(model, X_val, y_val, ax=ax)
-                        col2.pyplot(fig)
+#                     elif is_val:
+#                         # Show the confusion matrix plot without any columns
+#                         col1, col2, col3 = st.columns([0.2, 1, 0.2])
+#                         fig, ax = plt.subplots()
+#                         plot_confusion_matrix(model, X_val, y_val, ax=ax)
+#                         col2.pyplot(fig)
                 
                 
     col1, col2, col3, col4= st.columns(4)        
