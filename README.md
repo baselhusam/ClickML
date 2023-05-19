@@ -7,4 +7,4 @@ pip install -r requirements.txt
 streamlit run 1_ClickML.py
 ```
 
-the [website](https://baselhusam-clickml-1-clickml-6s9232.streamlit.app/)
+the [website](https://baselhusam-clickml.streamlit.app/)
