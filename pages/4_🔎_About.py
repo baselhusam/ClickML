@@ -86,7 +86,7 @@ def main():
     st.markdown("You can open the terminal and run the following commands to download the source code and run the app locally:", unsafe_allow_html=True)
     st.code("""git clone https://github.com/baselhusam/ClickML.git
 pip install -r requirements.txt
-streamlit run 1_👉_ClickML.py""", 
+streamlit run 1_ClickML.py""", 
 language="bash")
     new_line()
 
