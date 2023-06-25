@@ -3,6 +3,10 @@
 
 <br>
   
+https://github.com/baselhusam/ClickML/assets/90718297/7c48abfd-9546-4a94-82d1-84f7573027f7
+
+<br>
+
 ClickML is a powerful and user-friendly platform designed to empower non-technologists to create predictive models for their businesses effortlessly. With ClickML, you can build, train, evaluate, and fine-tune machine learning models with just a few clicks, eliminating the need for complex coding.
 
 <br>
@@ -67,27 +71,21 @@ To build and train your machine learning models using ClickML, follow these step
 6. Fine-tune the model parameters to optimize its performance.
 7. Once satisfied with the model, save it and export it for further use or deployment.
 
+
+https://github.com/baselhusam/ClickML/assets/90718297/db5acfa5-383a-48a9-85a2-ad3c2e9afd1f
+
+
 <br> 
 
 # 📄 Documentation
 
 <br> 
 
-ClickML provides comprehensive documentation to assist you throughout your machine learning journey. Explore the following resources:
+ClickML provides comprehensive documentation to assist you throughout your machine-learning journey. Explore the following resources:
 
 - User Manual: A detailed guide on using ClickML to build and evaluate machine learning models.
 - API Reference: Documentation for the ClickML API, enabling seamless integration into your projects.
 - FAQs: Frequently Asked Questions to address common queries and concerns.
-
-<br>
-
-# 📺 Demo Video
-
-<br> 
-
-Watch our professional promo video to get a glimpse of ClickML's capabilities and how it can simplify your machine learning workflow.
-
-https://github.com/baselhusam/ClickML/assets/90718297/7c48abfd-9546-4a94-82d1-84f7573027f7
 
 <br>
 
@@ -104,7 +102,7 @@ We extend our heartfelt gratitude to the open-source community and all the contr
 <br>
 
 
-We are here to support you on your machine learning journey. Feel free to reach out to us for any questions, feedback, or collaborations.
+We are here to support you on your machine-learning journey. Feel free to reach out to us for any questions, feedback, or collaborations.
 
 <br>
 
