@@ -663,7 +663,7 @@ if uploaded_file:
                     model = pickle.load(open('model.pkl','rb'))
                     y_pred = model.predict(st.session_state.X_test)
 
-                    cm = confusion_matrix(y_test, y_pred_test)
+                    # cm = confusion_matrix(y_test, y_pred_test)
                     fig, ax = plt.subplots(figsize=(6,6))
                     ConfusionMatrixDisplay.from_predictions(st.session_state.y_test, y_pred, ax=ax)
                     st.pyplot(fig)
@@ -789,7 +789,7 @@ if uploaded_file:
                     model = pickle.load(open('model.pkl','rb'))
                     y_pred = model.predict(st.session_state.X_test)
 
-                    cm = confusion_matrix(y_test, y_pred_test)
+                    # cm = confusion_matrix(y_test, y_pred_test)
                     fig, ax = plt.subplots(figsize=(6,6))
                     ConfusionMatrixDisplay.from_predictions(st.session_state.y_test, y_pred, ax=ax)
                     st.pyplot(fig)
