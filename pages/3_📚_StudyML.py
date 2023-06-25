@@ -108,7 +108,7 @@ with tabs[1]:
     # EDA with selected dataset
     new_line()
     st.subheader("Select a Dataset to Perform EDA on it")
-    dataset = st.selectbox("Select a dataset", ["Select", "Iris", "Titanic", "Wine Quality", "Boston Housing"])
+    dataset = st.selectbox("Select a dataset", ["Select", "Iris", "Titanic", "Wine Quality"])
     new_line()
 
     if dataset == "Iris":
@@ -602,219 +602,6 @@ fig.show()""", language="python")
 
         congratulation("eda_wine")
 
-    elif dataset == "Boston Housing":
-        
-        # Boston Housing Dataset
-        st.markdown("The Boston Housing dataset is a multivariate dataset that contains data about the Boston Housing. The dataset consists of 506 samples of houses in Boston. The dataset is often used in data mining, classification and clustering examples and to test algorithms. The dataset is available in the scikit-learn library.", unsafe_allow_html=True)
-        new_line()
-
-        # Perform EDA Process
-        from sklearn.datasets import load_boston
-
-        # Read the data
-        st.subheader("Read the Data")
-        st.write("You can read the data using the following code:")
-        st.code("""from sklearn.datasets import load_boston
-import pandas as pd
-boston = load_boston()
-df = pd.DataFrame(boston.data, columns=boston.feature_names)
-df['target'] = boston.target""", language="python")
-        boston = load_boston()
-        df = pd.DataFrame(boston.data, columns=boston.feature_names)
-        df['target'] = boston.target
-        st.write(df)
-        new_line()
-
-        # Data Size
-        st.subheader("Data Size")
-        st.write("The size of the data is:")
-        st.code("""df.shape""", language="python")
-        st.write(df.shape)
-        st.markdown("The data has 506 rows and 14 columns.")
-        new_line()
-
-        # Data Types
-        st.subheader("Data Types")
-        st.write("The data types of the features are:")
-        st.code("""df.dtypes""", language="python")
-        st.write(df.dtypes)
-        st.markdown("The data has 13 numerical features and 1 numerical target.")
-        new_line()
-
-        # Missing Values
-        st.subheader("Missing Values")
-        st.write("The missing values in the data are:")
-        st.code("""df.isnull().sum()""", language="python")
-        st.write(df.isnull().sum())
-        st.markdown("The data has no missing values.")
-        new_line()
-
-        # Description
-        st.subheader("Description")
-        st.write("Basic Statistics information about the data:")
-        st.code("""df.describe()""", language="python")
-        st.write(df.describe())
-        st.markdown("The `.describe()` method is used to generate descriptive statistics that summarize the central tendency, dispersion and shape of a dataset’s distribution, excluding NaN values.")
-        new_line()
-
-        # Check the distribution of each feature using histograms and box plots with plotly express
-        st.subheader("Distribution of Features")
-        st.write("The distribution of each feature is:")
-        st.markdown("<h6> CRIM </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='CRIM', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='CRIM', marginal='box')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> ZN </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='ZN', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='ZN', marginal='box')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> INDUS </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='INDUS', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='INDUS', marginal='box')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> CHAS </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='CHAS', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='CHAS', marginal='box')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> NOX </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='NOX', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='NOX', marginal='box')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> RM </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='RM', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='RM', marginal='box')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> AGE </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='AGE', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='AGE', marginal='box')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> DIS </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='DIS', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='DIS', marginal='box')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> RAD </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='RAD', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='RAD', marginal='box')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> TAX </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='TAX', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='TAX', marginal='box')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> PTRATIO </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='PTRATIO', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='PTRATIO', marginal='box')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> B </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='B', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='B', marginal='box')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> LSTAT </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.histogram(df, x='LSTAT', marginal='box')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='LSTAT', marginal='box')
-        st.write(fig)
-        new_line()
-
-        # Visualize the relationship between pairs of features using scatter plots
-        st.subheader("Relationship between Features")
-        st.write("The relationship between pairs of features is:")
-        st.markdown("<h6> CRIM vs ZN </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.scatter(df, x='CRIM', y='ZN', color='target')
-fig.show()""", language="python")
-        fig = px.scatter(df, x='CRIM', y='ZN', color='target')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> CRIM vs INDUS </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.scatter(df, x='CRIM', y='INDUS', color='target')
-fig.show()""", language="python")
-        fig = px.scatter(df, x='CRIM', y='INDUS', color='target')
-        st.write(fig)
-        new_line()
-
-        st.markdown("<h6> CRIM vs CHAS </h6>", unsafe_allow_html=True)
-        st.code("""fig = px.scatter(df, x='CRIM', y='CHAS', color='target')
-fig.show()""", language="python")
-        fig = px.scatter(df, x='CRIM', y='CHAS', color='target')
-        st.write(fig)
-        new_line()
-
-        # Correlation Matrix
-        st.subheader("Correlation Matrix")
-        st.write("The correlation matrix is:")
-        st.code("""fig = px.imshow(df.corr())
-fig.show()""", language="python")
-        fig = px.imshow(df.corr(), color_continuous_scale='Blues')
-        fig.update_layout(width=650, height=650)
-        st.write(fig)
-        new_line()
-
-        # The Distribution of the Target
-        st.subheader("Distribution of the Target")
-        st.write("The distribution of the target is:")
-        st.code("""fig = px.histogram(df, x='target')
-fig.show()""", language="python")
-        fig = px.histogram(df, x='target')
-        st.write(fig)
-        st.markdown("The target is normally distributed.")
-        
-        # Problem Type
-        st.subheader("Problem Type")
-        st.write("The problem type is:")
-        st.code("""df['target'].value_counts()""", language="python")
-        st.write(df['target'].value_counts())
-        st.markdown("The problem type is a regression problem. That is becuase the target is numerical.")
-
-        # Conclusion
-        st.subheader("Conclusion")
-        st.write("From the EDA process, we can conclude that the data is clean and ready for the next step in the Machine Learning process.")
-        st.write("The following are the key points from the EDA process:")
-        st.markdown("- The data has 506 rows and 14 columns.")
-        st.markdown("- The data has 13 numerical features and 1 numerical target.")
-        st.markdown("- The data has no missing values.")
-        st.markdown("- The data has no outliers.")
-        st.markdown("- The data has no correlations between the features.")
-        new_line()
-
-        congratulation("eda_boston")
-
-
 # Missing Values
 with tabs[2]:
 
@@ -899,7 +686,7 @@ with tabs[2]:
     # Perform Missing Values on the Dataset
     st.divider()
     st.markdown("#### Select Dataset to Perform Filling Missing Values on it")
-    dataset = st.selectbox("Select Dataset", ["Select", "Iris", "Titanic", "Wine Quality", "Boston Housing"])
+    dataset = st.selectbox("Select Dataset", ["Select", "Iris", "Titanic", "Wine Quality"])
 
     if dataset == "Select":
         pass
@@ -1005,24 +792,6 @@ null_val_df[null_val_df>0]""", language="python")
         new_line()
 
         congratulation("missing_wine")
-
-    elif dataset == "Boston Housing":
-        from sklearn.datasets import load_boston
-
-        df = load_boston()
-        df = pd.DataFrame(df.data, columns=df.feature_names)
-        df['target'] = load_boston().target
-        st.markdown("#### The Dataset")
-        st.write(df)
-
-        st.markdown("#### The Missing Values:")
-        st.markdown("The Missing Values in the Dataset are:")
-        st.code("""df.isnull().sum()""", language="python")
-        st.write(df.isnull().sum())
-        st.markdown("The Dataset has no missing values. So, we do not need to handle missing values.")
-        new_line()
-
-        congratulation("missing_booston")
 
 
 # Categorical Features
@@ -1144,7 +913,7 @@ df['feature'] = encoder.fit_transform(df['feature'])""", language="python")
     # Perform Categorical Features on the Dataset
     st.divider()
     st.markdown("#### Select Dataset to Perform Categorical Features on it")
-    dataset = st.selectbox("Select Dataset", ["Select", "Iris", "Titanic", "Wine Quality", "Boston Housing"], key = "categorical_data")
+    dataset = st.selectbox("Select Dataset", ["Select", "Iris", "Titanic", "Wine Quality"], key = "categorical_data")
 
     if dataset == "Iris":
         from sklearn.datasets import load_iris
@@ -1263,24 +1032,6 @@ df['feature'] = encoder.fit_transform(df['feature'])""", language="python")
         new_line()
 
         congratulation("categorical_wine")
-
-    if dataset == "Boston Housing":
-        from sklearn.datasets import load_boston
-
-        df = load_boston()
-        df = pd.DataFrame(df.data, columns=df.feature_names)
-        df['target'] = load_boston().target
-        st.markdown("#### The Dataset")
-        st.write(df)
-
-        st.markdown("#### The Categorical Features:")
-        st.markdown("The Categorical Features in the Dataset are:")
-        st.code("""df.select_dtypes(include='object').columns""", language="python")
-        st.write(df.select_dtypes(include='object').columns)
-        st.markdown("The Dataset has no categorical features. So, we do not need to handle categorical features.")
-        new_line()
-
-        congratulation("categorical_boston")
 
 
 # Scaling & Transformation
@@ -1450,7 +1201,7 @@ df['feature'] = boxcox(df['feature'])[0]""", language="python")
     # Perform Scaling & Transformation on the Dataset
     st.divider()
     st.markdown("#### Select Dataset to Perform Scaling & Transformation on it")
-    dataset = st.selectbox("Select Dataset", ["Select", "Iris", "Titanic", "Wine Quality", "Boston Housing"], key = "scaling_transformation_data")
+    dataset = st.selectbox("Select Dataset", ["Select", "Iris", "Titanic", "Wine Quality"], key = "scaling_transformation_data")
 
     if dataset == "Iris":
         from sklearn.datasets import load_iris
@@ -1561,36 +1312,6 @@ df[['alcohol','alcalinity_of_ash','magnesium']] = scaler.fit_transform(df[['alco
 
         congratulation("scale_wine")
 
-    if dataset == "Boston Housing":
-        from sklearn.datasets import load_boston
-
-        df = load_boston()
-        df = pd.DataFrame(df.data, columns=df.feature_names)
-        df['target'] = load_boston().target
-        st.markdown("#### The Dataset")
-        st.write(df)
-
-        st.markdown("#### The Numerical Features:")
-        st.markdown("The Numerical Features in the Dataset are:")
-        st.code("""df.select_dtypes(include='number')""", language="python")
-        st.markdown("The Numerical Features")
-        st.write(df.select_dtypes(include='number'))
-
-        st.write("We can see  that only the `AGE`, `TAX`, and the `B` features have different ranges with the other features. So, we need to scale them.")
-        st.write("We can use the `Standard Scaler` method because the `Min Max Scaler` make the output ranges between [0-1] and the `target` has higher ranges. But in general there is no best scaling method you can try whatever you want.")
-        new_line()
-
-        st.markdown("##### The `Standard Scaler`")
-        st.code("""from sklearn.preprocessing import StandardScaler
-scaler = StandardScaler()
-df[['AGE','TAX','B']] = scaler.fit_transform(df[['AGE','TAX','B']])""", language="python")
-        new_line()
-        
-        st.markdown(":red[**Very Important Note:**] :green[**_The Machine Learning Process is an Iterative Process. Which means that you might here apply `Standard Scaler` on the `AGE`, `TAX`, and the `B` features and build the model, and maybe when you use the `Robust Scaler` and rebuild the model it gives you better performance. In this case you should you the `Robust Scaler` becuase it gives better perfromance. <br> the idea is when you are dealing with data for building machine learning models, you will always go forth and back phases and try different method and see its reflection on the model._**]", unsafe_allow_html=True)
-        new_line()
-
-        congratulation("scale_boston")
-
 
 # Feature Engineering
 with tabs[5]:
@@ -1661,7 +1382,7 @@ model.feature_importances_""", language="python")
 
         # Apply Feature Engineering on the Dataset
         st.markdown("#### Select Dataset to Apply Feature Engineering on it")
-        dataset = st.selectbox("Select Dataset", ["Select", "Iris", "Titanic", "Wine Quality", "Boston Housing"], key = "feature_engineering_data")
+        dataset = st.selectbox("Select Dataset", ["Select", "Iris", "Titanic", "Wine Quality"], key = "feature_engineering_data")
 
         if dataset == "Iris":
                 from sklearn.datasets import load_iris
@@ -1725,27 +1446,6 @@ model.feature_importances_""", language="python")
                 new_line()
                 congratulation("feature_engineering_wine")
 
-        if dataset == "Boston Housing":
-                from sklearn.datasets import load_boston
-        
-                df = load_boston()
-                df = pd.DataFrame(df.data, columns=df.feature_names)
-                df['target'] = load_boston().target
-                st.markdown("#### The Dataset")
-                st.write(df)
-                
-                st.markdown("#### Feature Extraction")
-                st.markdown("- Compute the ratio between the `NOX` and `INDUS` features.")
-                st.code("""df['NOX to INDUS ratio'] = df['NOX'] / df['INDUS']""", language="python")
-                st.markdown("- Compute the ratio between the `TAX` and `INDUS` features.")
-                st.code("""df['TAX to INDUS ratio'] = df['TAX'] / df['INDUS']""", language="python")
-                new_line()
-
-                st.markdown("#### Feature Selection")
-                st.markdown("We can sellect the best features for the model. The best features for the model are: `RM`, `LSTAT`, `PTRATIO`, `NOX`, `INDUS`, `TAX`, `CRIM`, `AGE`, `ZN`, `RAD`, `B`, and the `target` absolutly.")
-                st.code("""df = df[['RM', 'LSTAT', 'PTRATIO', 'NOX', 'INDUS', 'TAX', 'CRIM', 'AGE', 'ZN', 'RAD', 'B', 'target']]""", language="python")
-                new_line()
-                congratulation("feature_engineering_boston")
 
 # Splitting Data
 with tabs[6]:
@@ -1783,7 +1483,7 @@ X_val, X_test, y_val, y_test = train_test_split(X_rem, y_rem, train_size=0.5)"""
         # Apply Splitting The Data on the Dataset
         st.divider()
         st.markdown("#### Select Dataset to Apply Splitting The Data on it")
-        dataset = st.selectbox("Select Dataset", ["Select", "Iris", "Titanic", "Wine Quality", "Boston Housing"], key = "splitting_data")
+        dataset = st.selectbox("Select Dataset", ["Select", "Iris", "Titanic", "Wine Quality"], key = "splitting_data")
 
         if dataset == "Iris":
                 from sklearn.datasets import load_iris
@@ -1853,31 +1553,6 @@ X_val, X_test, y_val, y_test = train_test_split(X_rem, y_rem, train_size=0.5)"""
                 new_line()
 
                 congratulation("splitting_wine")
-
-        if dataset == "Boston Housing":
-              
-                from sklearn.datasets import load_boston
-        
-                df = load_boston()
-                df = pd.DataFrame(df.data, columns=df.feature_names)
-                df['target'] = load_boston().target
-                st.markdown("#### The Dataset")
-                st.write(df)
-                
-                st.markdown("#### Dataset Shape")
-                st.code("""df.shape""", language="python")
-                st.write(df.shape)
-        
-                st.markdown("#### Splitting The Data")
-                st.markdown("We will split the data into training, validation, and testing sets. The training set will have 70% of the total number of rows. The validation set will have 15% of the total number of rows. The testing set will have 15% of the total number of rows.")
-                st.code("""from sklearn.model_selection import train_test_split
-X = df.drop('target', axis=1)
-y = df['target']
-X_train, X_rem, y_train, y_rem = train_test_split(X, y, train_size=0.7)
-X_val, X_test, y_val, y_test = train_test_split(X_rem, y_rem, train_size=0.5)""", language="python")
-                new_line()
-
-                congratulation("splitting_boston")
 
 
 # Building Machine Learning Models
