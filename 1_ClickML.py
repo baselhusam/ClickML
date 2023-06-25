@@ -2417,9 +2417,9 @@ print("R2 Score on Test Set: ", r2_score(y_test, y_pred_test))
 
                         cm = confusion_matrix(y_test, y_pred_test)
                         col1, col2, col3 = st.columns([0.2,1,0.2])
-                        # fig, ax = plt.subplots()
-                        disp = ConfusionMatrixDisplay(cm)
-                        col2.pyplot(disp)
+                        fig, ax = plt.subplots()
+                        ConfusionMatrixDisplay(cm, ax=ax)
+                        col2.pyplot(fig)
                         
                         # Show the confusion matrix plot without any columns
                         # col1, col2, col3 = st.columns([0.2, 1, 0.2])
