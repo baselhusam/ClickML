@@ -654,13 +654,20 @@ if uploaded_file:
                     st.write(metrics_df)
 
                     # Plot confusion matrix as plot with plot_confusion_matrix
-                    from sklearn.metrics import plot_confusion_matrix
+                    # from sklearn.metrics import plot_confusion_matrix
                     import matplotlib.pyplot as plt
-                    
+                    from sklearn.metrics import ConfusionMatrixDisplay, confusion_matrix
                     st.markdown("#### Confusion Matrix")
+                    new_line()
+
+                    model = pickle.load(open('model.pkl','rb'))
+                    y_pred = model.predict(st.session_state.X_test)
+
+                    cm = confusion_matrix(y_test, y_pred_test)
                     fig, ax = plt.subplots(figsize=(6,6))
-                    plot_confusion_matrix(model, st.session_state.X_test, st.session_state.y_test, ax=ax)
+                    ConfusionMatrixDisplay.from_predictions(st.session_state.y_test, y_pred, ax=ax)
                     st.pyplot(fig)
+                    
 
 
                 elif problem_type == "Regression":
