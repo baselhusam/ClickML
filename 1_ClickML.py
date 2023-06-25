@@ -166,7 +166,7 @@ if st.session_state.df is None:
     # Select
     elif uploading_way == "select":
                 selected = st.selectbox("Select Dataset", ["Select", "Titanic Dataset", "Iris Dataset", "Wine Dataset", "Breast Cancer Dataset", 
-                                    "Boston Housing Dataset", "Diabetes Dataset", "Digits Dataset", 
+                                    "Diabetes Dataset", "Digits Dataset", 
                                     "Olivetti Faces Dataset", "California Housing Dataset", 
                                     "Covid-19 Dataset"])
         
@@ -195,12 +195,6 @@ if st.session_state.df is None:
                     df['target'] = cancer.target
                     st.session_state.df = df
 
-                elif selected == "Boston Housing Dataset":
-                    from sklearn.datasets import load_boston
-                    boston = load_boston()
-                    df = pd.DataFrame(boston.data, columns=boston.feature_names)
-                    df['target'] = boston.target
-                    st.session_state.df = df
 
                 elif selected == "Diabetes Dataset":
                     from sklearn.datasets import load_diabetes
