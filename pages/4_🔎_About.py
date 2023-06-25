@@ -29,11 +29,11 @@ def main():
     # What is ClickML?
     st.markdown("Welcome to ClickML, an intuitive and powerful machine learning application designed to simplify the process of building and evaluating machine learning models. Whether you're a beginner or an experienced data scientist, ClickML provides a user-friendly interface to streamline your machine learning workflows.", unsafe_allow_html=True)
     st.markdown("It is no-code easy-to-use platfrom which allows you to build machine learning models without writing a single line of code. \n ")
-
+    
     # Show Video Prom
     video_path = "./assets/promo.mp4"
-    st.video(video_path)
-
+    video_bytes = open(video_path, "rb").read()
+    st.video(video_bytes)
     
     
     # what this app does with the main, quickml, and study_time pages
