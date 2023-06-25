@@ -31,7 +31,7 @@ def main():
     st.markdown("It is no-code easy-to-use platfrom which allows you to build machine learning models without writing a single line of code. \n ")
     
     # Show Video Prom
-    video_path = "./assets/promo.mp4"
+    video_path = "./assets/Promo.mp4"
     video_bytes = open(video_path, "rb").read()
     st.video(video_bytes)
     
