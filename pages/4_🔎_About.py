@@ -91,7 +91,7 @@ language="bash")
     new_line()
 
     # Roadmap 
-    st.header(" 🗺️ ClickML Roadmap")
+    st.header(" 🗺️ Roadmap")
     st.markdown("""This is a roadmap for the ClickML project. It will show the current status of the project and the future work that needs to be done.
     Visit the [**ClickML Roadmap**](https://clickml-roadmap.streamlit.app/) for more information.""", unsafe_allow_html = True)
     new_line()
