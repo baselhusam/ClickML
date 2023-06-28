@@ -90,6 +90,12 @@ streamlit run 1_ClickML.py""",
 language="bash")
     new_line()
 
+    # Roadmap 
+    st.header("## 🗺️ ClickML Roadmap")
+    st.markdown("""This is a roadmap for the ClickML project. It will show the current status of the project and the future work that needs to be done.
+    Visit the [**ClickML Roadmap**](https://clickml-roadmap.streamlit.app/) for more information.""", unsafe_allow_html = True)
+    new_line()
+
     # Contact Us
     st.header(" 💬 Contact Us")
     st.markdown("""If you have any questions or suggestions, please feel free to contact us at **baselmathar@gmail.com**. We're here to help!
