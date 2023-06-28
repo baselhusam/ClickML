@@ -116,3 +116,8 @@ We are here to support you on your machine-learning journey. Feel free to reach 
   <img src="https://seeklogo.com/images/F/facebook-logo-C64946D6D2-seeklogo.com.png" alt="Facebook" width="80" height="80" style="border-radius: 25%;">
 </a>
 
+<br>
+<br>
+<br>
+
+Copyright (c) 2023 Basel Mather
