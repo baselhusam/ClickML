@@ -9,8 +9,8 @@ import time
 from PIL import Image
 
 # Config
-page_icon = Image.open("./assets/icon.png")
-st.set_page_config(layout="centered", page_title="Click ML", page_icon=page_icon)
+page_icon = Image.open("./assets/logoo.png")
+st.set_page_config(layout="centered", page_title="Complaints-AI", page_icon=page_icon)
 
 # Initial State
 def initial_state():
@@ -115,11 +115,11 @@ def progress_bar():
 
 # Logo 
 col1, col2, col3 = st.columns([0.25,1,0.25])
-col2.image("./assets/logo.png", use_column_width=True)
+col2.image("./assets/logoo.png", use_column_width=True)
 new_line(2)
 
 # Description
-st.markdown("""Welcome to ClickML, the easy-to-use platform for building machine 
+st.markdown("""Welcome to Complaints-AI, the easy-to-use platform for building machine 
 learning models with just a few clicks. Our intuitive interface and powerful tools make it easy to prepare your data, 
 train models, and extract insights in minutes, without the need for any prior coding or machine learning knowledge. 
 Start building your own models today!""", unsafe_allow_html=True)
@@ -129,29 +129,19 @@ st.divider()
 # Dataframe selection
 st.markdown("<h2 align='center'> <b> Getting Started", unsafe_allow_html=True)
 new_line(1)
-st.write("The first step is to upload your data. You can upload your data in three ways: **Upload File**, **Select from Ours**, and **Write URL**. In all ways the data should be a csv file and should not exceed 200 MB.")
+st.write("The first step is to upload your data. You can upload your data by browsing your computer : **Upload File** . The data should be a csv file and should not exceed 200 MB.")
 new_line(1)
 
 
 
 # Uploading Way
 uploading_way = st.session_state.uploading_way
-col1, col2, col3 = st.columns(3,gap='large')
+col1 = st.columns(1,gap='large')
 
 # Upload
 def upload_click(): st.session_state.uploading_way = "upload"
 col1.markdown("<h5 align='center'> Upload File", unsafe_allow_html=True)
 col1.button("Upload File", key="upload_file", use_container_width=True, on_click=upload_click)
-
-# Select    
-def select_click(): st.session_state.uploading_way = "select"
-col2.markdown("<h5 align='center'> Select from Ours", unsafe_allow_html=True)
-col2.button("Select from Ours", key="select_from_ours", use_container_width=True, on_click=select_click)
-        
-# URL
-def url_click(): st.session_state.uploading_way = "url"
-col3.markdown("<h5 align='center'> Write URL", unsafe_allow_html=True)
-col3.button("Write URL", key="write_url", use_container_width=True, on_click=url_click)
 
 # No Data
 if st.session_state.df is None:
@@ -161,78 +151,6 @@ if st.session_state.df is None:
         uploaded_file = st.file_uploader("Upload the Dataset", type="csv")
         if uploaded_file:
             df = load_data(uploaded_file)
-            st.session_state.df = df
-
-    # Select
-    elif uploading_way == "select":
-                selected = st.selectbox("Select Dataset", ["Select", "Titanic Dataset", "Iris Dataset", "Wine Dataset", "Breast Cancer Dataset", 
-                                    "Diabetes Dataset", "Digits Dataset", 
-                                    "Olivetti Faces Dataset", "California Housing Dataset", 
-                                    "Covid-19 Dataset"])
-        
-                if selected == "Titanic Dataset":
-                    df = load_data("./data/titanic.csv")
-                    st.session_state.df = df
-
-                elif selected == "Iris Dataset":
-                    from sklearn.datasets import load_iris
-                    iris = load_iris()
-                    df = pd.DataFrame(iris.data, columns=iris.feature_names)
-                    df['target'] = iris.target
-                    st.session_state.df = df
-
-                elif selected == "Wine Dataset":
-                    from sklearn.datasets import load_wine
-                    wine = load_wine()
-                    df = pd.DataFrame(wine.data, columns=wine.feature_names)
-                    df['target'] = wine.target
-                    st.session_state.df = df
-
-                elif selected == "Breast Cancer Dataset":
-                    from sklearn.datasets import load_breast_cancer
-                    cancer = load_breast_cancer()
-                    df = pd.DataFrame(cancer.data, columns=cancer.feature_names)
-                    df['target'] = cancer.target
-                    st.session_state.df = df
-
-
-                elif selected == "Diabetes Dataset":
-                    from sklearn.datasets import load_diabetes
-                    diabetes = load_diabetes()
-                    df = pd.DataFrame(diabetes.data, columns=diabetes.feature_names)
-                    df['target'] = diabetes.target
-                    st.session_state.df = df
-
-                elif selected == "Digits Dataset":
-                    from sklearn.datasets import load_digits
-                    digits = load_digits()
-                    df = pd.DataFrame(digits.data, columns=digits.feature_names)
-                    df['target'] = digits.target
-                    st.session_state.df = df
-
-                elif selected == "Olivetti Faces Dataset":
-                    from sklearn.datasets import fetch_olivetti_faces
-                    olivetti = fetch_olivetti_faces()
-                    df = pd.DataFrame(olivetti.data)
-                    df['target'] = olivetti.target
-                    st.session_state.df = df
-
-                elif selected == "California Housing Dataset":
-                    from sklearn.datasets import fetch_california_housing
-                    california = fetch_california_housing()
-                    df = pd.DataFrame(california.data, columns=california.feature_names)
-                    df['target'] = california.target
-                    st.session_state.df = df
-
-                elif selected == "Covid-19 Dataset":
-                    df = load_data("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv")
-                    st.session_state.df = df
-
-    # URL
-    elif uploading_way == "url":
-        url = st.text_input("Enter URL")
-        if url:
-            df = load_data(url)
             st.session_state.df = df
 
 
