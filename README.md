@@ -1,4 +1,13 @@
-
+ <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+    
 ![Asset 3k](https://github.com/Radmin99/ClickML/blob/main/logoo.png)
 
 
@@ -8,7 +17,7 @@ This application is designed to leverage artificial intelligence for the analysi
 
 <br>
 
-##📝 Project Description
+## 📝 Project Description
 Complaints-AI endeavors to democratize artificial intelligence, offering a no-code platform that simplifies the construction of predictive models. Our platform empowers users to harness the capabilities of AI in addressing customer complaints without the need for extensive coding expertise.
 
 <br>
@@ -86,4 +95,4 @@ We are here to support you on your machine-learning journey. Feel free to reach 
 <br>
 <br>
 
-Copyright (c) 2023 Basel Mather
+Copyright (c) 2024 Roudha Alhammadi
