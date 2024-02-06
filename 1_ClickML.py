@@ -9,7 +9,7 @@ import time
 from PIL import Image
 
 # Config
-page_icon = Image.open("./pages/logoo.png")
+page_icon = Image.open("./assets/logoo.png")
 st.set_page_config(layout="centered", page_title="Complaints-AI", page_icon=page_icon)
 
 # Initial State
@@ -115,7 +115,7 @@ def progress_bar():
 
 # Logo 
 col1, col2, col3 = st.columns([0.25,1,0.25])
-col2.image("./pages/logoo.png", use_column_width=True)
+col2.image("./assests/logoo.png", use_column_width=True)
 new_line(2)
 
 # Description
