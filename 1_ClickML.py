@@ -9,7 +9,7 @@ import time
 from PIL import Image
 
 # Config
-page_icon = Image.open("assets/logoo.png")
+page_icon = Image.open("logoo.png")
 st.set_page_config(layout="centered", page_title="Complaints-AI", page_icon=page_icon)
 
 # Initial State
@@ -30,7 +30,7 @@ def load_data(upd_file):
 
 # Logo 
 col1 = st.columns([0.25, 1, 0.25])
-col1.image("assets/logoo.png", use_column_width=True)
+col1.image("logoo.png", use_column_width=True)
 st.write("")
 st.write("")
 
