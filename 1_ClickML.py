@@ -144,7 +144,7 @@ col1 = st.columns(1, gap='large')
 def upload_click():
     st.session_state.uploading_way = "upload"
 
-col1.markdown("<h5 align='center'> Upload File", unsafe_allow_html=True)
+col1.markdown("<h5 align='center'> Upload File </h5>", unsafe_allow_html=True)
 col1.button("Upload File", key="upload_file", use_container_width=True, on_click=upload_click)
 
 # No Data
