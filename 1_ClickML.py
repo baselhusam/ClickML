@@ -56,7 +56,7 @@ col1, _, _ = st.columns([1, 1, 1])
 def upload_click():
     st.session_state.uploading_way = "upload"
 
-col1.image("assets/logoo.png", use_column_width=True, on_click=upload_click)
+col1.image("assets/sb-click.png", use_column_width=True, on_click=upload_click)
 
 # No Data
 if st.session_state.df is None:
@@ -70,6 +70,7 @@ if st.session_state.df is None:
 # Sidebar       
 with st.sidebar:
     st.image("assets/sb-click.png", use_column_width=True)
+
 
     
 # Dataframe
