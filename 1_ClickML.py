@@ -133,23 +133,22 @@ st.divider()
 # Dataframe selection
 st.markdown("<h2 align='center'> <b> Getting Started", unsafe_allow_html=True)
 new_line(1)
-st.write("The first step is to upload your data. You can upload your data by browsing your computer : **Upload File** . The data should be a csv file and should not exceed 200 MB.")
+st.write("The first step is to upload your data. You can upload your data by browsing your computer: **Upload File**. The data should be a CSV file and should not exceed 200 MB.")
 new_line(1)
-
-
 
 # Uploading Way
 uploading_way = st.session_state.uploading_way
-col1 = st.columns(1,gap='large')
+col1 = st.columns(1, gap='large')
 
 # Upload
-def upload_click(): st.session_state.uploading_way = "upload"
+def upload_click():
+    st.session_state.uploading_way = "upload"
+
 col1.markdown("<h5 align='center'> Upload File", unsafe_allow_html=True)
 col1.button("Upload File", key="upload_file", use_container_width=True, on_click=upload_click)
 
 # No Data
 if st.session_state.df is None:
-
     # Upload
     if uploading_way == "upload":
         uploaded_file = st.file_uploader("Upload the Dataset", type="csv")
@@ -157,10 +156,10 @@ if st.session_state.df is None:
             df = load_data(uploaded_file)
             st.session_state.df = df
 
-
 # Sidebar       
 with st.sidebar:
-    st.image("assets/sb-click.png",   use_column_width=True)
+    st.image("assets/sb-click.png", use_column_width=True)
+
     
     
 # Dataframe
