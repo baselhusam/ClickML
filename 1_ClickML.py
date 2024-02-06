@@ -118,8 +118,8 @@ def progress_bar():
 
 
 # Logo 
-col1, col2, col3 = st.columns([0.25,1,0.25])
-col2.image("assets/logoo.png", use_column_width=True)
+col1 = st.columns([0.25,1,0.25])
+col1.image("assets/logoo.png", use_column_width=True)
 new_line(2)
 
 # Description
