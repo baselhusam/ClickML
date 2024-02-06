@@ -119,7 +119,7 @@ def progress_bar():
 
 # Logo 
 col1, col2, col3 = st.columns([0.25,1,0.25])
-col2.image("assets/icon.png", use_column_width=True)
+col2.image("assets/logoo.png", use_column_width=True)
 new_line(2)
 
 # Description
@@ -160,7 +160,7 @@ if st.session_state.df is None:
 
 # Sidebar       
 with st.sidebar:
-    st.image("./assets/sb-click.png",   use_column_width=True)
+    st.image("assets/sb-click.png",   use_column_width=True)
     
     
 # Dataframe
