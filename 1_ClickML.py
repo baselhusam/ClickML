@@ -8,9 +8,13 @@ import plotly.express as px
 import time
 from PIL import Image
 
+from PIL import Image
+import streamlit as st
+
 # Config
 page_icon = Image.open("./assets/logoo.png")
 st.set_page_config(layout="centered", page_title="Complaints-AI", page_icon=page_icon)
+
 
 # Initial State
 def initial_state():
